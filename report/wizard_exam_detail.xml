@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template id="wizard_report_exam_detail">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <t t-if="is_there_exam">
+                    <t t-foreach="exams" t-as="exam">
+                        <h2>Exam Name
+                            <span>
+                                <t t-esc="exam['name']" />
+                            </span>
+                        </h2>
+                        <div class="oe_structure"/>
+                        <div class="row">
+                            <div class="mt-5 d-flex justify-content-between w-75">
+                                <h5 class="o_underline" style="color: #A27206">Classes: </h5>
+                                <t t-foreach="exam['classes']" t-as="exam_class">
+                                    <h5 class="pl-2">
+                                        <t t-esc="exam_class['name']" />
+                                    </h5>
+                                </t>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <h5><span style="color: #1CB74F">Exam Date:</span> <span> <t t-esc="exam['date']" /> </span></h5>
+                        </div>
+                        <br/>
+                        <t t-if="exam['results']">
+                            <h3>Results</h3>
+                            <table class="table table-sm o_main_table" name="students">
+                                <thead>
+                                    <tr>
+                                        <th name="th_reference" class="text-left">
+                                            <span>Student Name</span>
+                                        </th>
+                                        <th name="th_reference" class="text-left">
+                                            <span>Class</span>
+                                        </th>
+                                        <th name="th_reference" class="text-left">
+                                            <span>Point</span>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <t t-foreach="exam['results']" t-as="result">
+                                    <tr>
+                                        <td>
+                                            <span>
+                                                <t t-esc="result['student_name']" />
+                                            </span>
+                                        </td>
+                                        <td>
+                                             <span>
+                                                <t t-esc="result['class_room']" />
+                                            </span>
+                                        </td>
+                                        <td>
+                                             <span>
+                                                <t t-esc="result['point']" />
+                                            </span>
+                                        </td>
+                                    </tr>
+                                </t>
+                            </table>
+                        </t>
+                    </t>
+                </t>
+                <t t-else="">
+                    <p>
+                        <t t-esc="date_from"/> - <t t-esc="date_to"/> Tarihleri arasinda bir sinav bulunmamaktadir
+                    </p>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

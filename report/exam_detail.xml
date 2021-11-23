@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template id="report_exam_detail">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <div class="oe_structure"/>
+                        <div class="row">
+                            <div class="mt-5 d-flex justify-content-between w-75">
+                                <h5 class="o_underline" style="color: #A27206">Classes: </h5>
+                                <t t-foreach="o.classes" t-as="exam_class">
+                                    <h5 class="pl-2" t-field="exam_class.name"/>
+                                </t>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <h5><span style="color: #1CB74F">Exam Date:</span> <span t-field="o.date"></span></h5>
+                        </div>
+                        <br/>
+                        <t t-if="o.results">
+                            <h3>Results</h3>
+                            <table class="table table-sm o_main_table" name="students">
+                                <thead>
+                                    <tr>
+                                        <th name="th_reference" class="text-left">
+                                            <span>Student Name</span>
+                                        </th>
+                                        <th name="th_reference" class="text-left">
+                                            <span>Class</span>
+                                        </th>
+                                        <th name="th_reference" class="text-left">
+                                            <span>Point</span>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <t t-foreach="o.results" t-as="result">
+                                    <tr>
+                                        <td>
+                                            <span t-field="result.student_name"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="result.class_room"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="result.point"/>
+                                        </td>
+                                    </tr>
+                                </t>
+                            </table>
+                        </t>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

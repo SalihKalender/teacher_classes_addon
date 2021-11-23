@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template id="report_student_detail">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                 <t t-call="web.external_layout">
+                    <div class="page">
+                        <div class="oe_structure"/>
+                        <div class="row">
+                            <div class="col-xs-8">
+                                <table class="table table-condensed" style="border: 3px solid black !important;">
+                                    <tr>
+                                        <td width="60%">
+                                            <table>
+                                                <tr>
+                                                    <td colspan="3" class="text-center">
+                                                        <span t-field="o.name"/>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <span>
+                                                            <strong>Class:</strong>
+                                                        </span>
+                                                    </td>
+                                                    <td>
+                                                        <span>:</span>
+                                                    </td>
+                                                    <td>
+                                                        <span t-field="o.class_room"/>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <br/>
+
+                        <t t-if="o.exams">
+                            <span>Exams</span>
+                            <table class="table table-sm o_main_table" name="exams">
+                                <thead>
+                                    <tr>
+                                        <th name="th_reference" class="text-left">
+                                            <span>Date</span>
+                                        </th>
+                                        <th name="th_age" class="text-left">
+                                            <span>Class</span>
+                                        </th>
+                                        <th name="th_doctor" class="text-left">
+                                            <span>Point</span>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <t t-foreach="o.exams" t-as="exam">
+                                    <tr>
+                                        <td>
+                                            <span t-field="exam.exam_name"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="exam.class_room"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="exam.point"/>
+                                        </td>
+                                    </tr>
+                                </t>
+                            </table>
+                        </t>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

@@ -1,0 +1,73 @@
+<odoo>
+
+    <record id="report_student_details" model="ir.actions.report">
+        <field name="name">Student Details</field>
+        <field name="model">student.student</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">university_teacher.report_student_detail</field>
+        <field name="report_file">university_teacher.report_student_detail</field>
+        <field name="binding_model_id" ref="model_student_student"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <record id="report_student_details_xlsx" model="ir.actions.report">
+        <field name="name">Student Details XLSX</field>
+        <field name="model">student.student</field>
+        <field name="report_type">xlsx</field>
+        <field name="report_name">university_teacher.report_student_detail.xlsx</field>
+        <field name="report_file">university_teacher.report_student_detail.xlsx</field>
+        <field name="binding_model_id" ref="model_student_student"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <record id="report_class_details" model="ir.actions.report">
+        <field name="name">Class Details</field>
+        <field name="model">class.room</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">university_teacher.report_class_detail</field>
+        <field name="report_file">university_teacher.report_class_detail</field>
+        <field name="binding_model_id" ref="model_class_room"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <record id="report_class_details_xlsx" model="ir.actions.report">
+        <field name="name">Class Details XLSX</field>
+        <field name="model">class.room</field>
+        <field name="report_type">xlsx</field>
+        <field name="report_name">university_teacher.report_class_detail.xlsx</field>
+        <field name="report_file">university_teacher.report_class_detail.xlsx</field>
+        <field name="binding_model_id" ref="model_class_room"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <record id="report_exam_details" model="ir.actions.report">
+        <field name="name">Exam Details</field>
+        <field name="model">class.exam</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">university_teacher.report_exam_detail</field>
+        <field name="report_file">university_teacher.report_exam_detail</field>
+        <field name="binding_model_id" ref="model_class_exam"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <record id="report_exam_details_xlsx" model="ir.actions.report">
+        <field name="name">Exam Details XLSX</field>
+        <field name="model">class.exam</field>
+        <field name="report_type">xlsx</field>
+        <field name="report_name">university_teacher.report_exam_detail.xlsx</field>
+        <field name="report_file">university_teacher.report_exam_detail.xlsx</field>
+        <field name="binding_model_id" ref="model_class_exam"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <record id="report_menu_exams_detail" model="ir.actions.report">
+        <field name="name">Exam Details</field>
+        <field name="model">exam.report.by.date</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">university_teacher.wizard_report_exam_detail</field>
+        <field name="report_file">university_teacher.wizard_report_exam_detail</field>
+        <field name="binding_model_id" ref="university_teacher.model_create_exam_report_wizard"/>
+        <field name="binding_type">report</field>
+    </record>
+
+</odoo>

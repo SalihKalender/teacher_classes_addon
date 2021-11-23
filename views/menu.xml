@@ -1,0 +1,28 @@
+<odoo>
+    <data>
+        <menuitem id='teacher_classes_root'
+                  name='Teacher/Classes'
+                  sequence='-1000'/>
+
+        <menuitem id='classes_root'
+                  name='Classes'
+                  parent='teacher_classes_root'
+                  action='teacher_classes_action'
+        />
+        <menuitem id='teacher_exams_root'
+                  name='Exams'
+                  parent='teacher_classes_root'
+                  action='teacher_exams_action'
+        />
+        <menuitem id='teacher_student_root'
+                  name='Students'
+                  parent='teacher_classes_root'
+                  action='teacher_student_action'
+        />
+        <menuitem id='teacher_reporting_root'
+                  name='Reporting'
+                  parent='teacher_classes_root'
+        />
+
+    </data>
+</odoo>

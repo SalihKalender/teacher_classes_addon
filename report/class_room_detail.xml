@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template id="report_class_detail">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                 <t t-call="web.external_layout">
+                    <div class="page">
+                        <div class="oe_structure"/>
+                        <div class="row">
+                            <div class="container-fluid mt-5">
+                                <h2>Class: <span t-field="o.name" /> </h2>
+                                <br />
+                                <h5>Total Students: <span t-field="o.student_count" /> </h5>
+                            </div>
+                        </div>
+                        <br/>
+                        <t t-if="o.students">
+                            <span>Students</span>
+                            <table class="table table-sm o_main_table" name="students">
+                                <thead>
+                                    <tr>
+                                        <th name="th_reference" class="text-left">
+                                            <span>Name</span>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <t t-foreach="o.students" t-as="student">
+                                    <tr>
+                                        <td>
+                                            <span t-field="student.name"/>
+                                        </td>
+                                    </tr>
+                                </t>
+                            </table>
+                        </t>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

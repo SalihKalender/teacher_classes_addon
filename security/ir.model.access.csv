@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_student_student,student.student,model_student_student,base.group_user,1,1,1,1
+access_class_room,class.room,model_class_room,base.group_user,1,1,1,1
+access_class_exam,class.exam,model_class_exam,base.group_user,1,1,1,1
+access_exam_results,exam.results,model_exam_results,base.group_user,1,1,1,1
+access_create_exam_report_wizard,create.exam.report.wizard,model_create_exam_report_wizard,base.group_user,1,1,1,1

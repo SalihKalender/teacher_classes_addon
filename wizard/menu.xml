@@ -1,0 +1,10 @@
+<odoo>
+    <data>
+        <menuitem id='reporting_exams_root'
+                  name='Exams'
+                  parent='teacher_reporting_root'
+                  action='reporting_exams_action'
+                  sequence="10"
+        />
+    </data>
+</odoo>
