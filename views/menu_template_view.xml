@@ -1,0 +1,30 @@
+<odoo>
+    <data>
+        <record id="menu_exams_view" model="website.menu">
+            <field name="name">Exams</field>
+            <field name="url">/university_teacher/exams</field>
+            <field name="parent_id" ref="website.main_menu"/>
+            <field name="sequence" type="int">20</field>
+        </record>
+        <record id="menu_add_exam_view" model="website.menu">
+            <field name="name">Add Exam</field>
+            <field name="url">/university_teacher/add_exam</field>
+            <field name="parent_id" ref="website.main_menu"/>
+            <field name="sequence" type="int">21</field>
+        </record>
+
+        <record id="menu_classes_view" model="website.menu">
+            <field name="name">Classes</field>
+            <field name="url">/university_teacher/classes</field>
+            <field name="parent_id" ref="website.main_menu"/>
+            <field name="sequence" type="int">22</field>
+        </record>
+        <record id="menu_add_class_view" model="website.menu">
+            <field name="name">Add Class</field>
+            <field name="url">/university_teacher/add_class</field>
+            <field name="parent_id" ref="website.main_menu"/>
+            <field name="sequence" type="int">21</field>
+        </record>
+
+    </data>
+</odoo>

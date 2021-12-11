@@ -1,0 +1,28 @@
+<odoo>
+    <data>
+        <template id="add_class">
+            <t t-call="website.layout">
+                <div class="container p-5">
+                    <h2 class="mb-4">Class Form</h2>
+                    <form action="/university_teacher/created/class">
+                        <input type='hidden' name='csrf_token' t-att-value='request.csrf_token()' />
+                        <div class="form-group row">
+                            <label for="class_name" class="col-sm-2 col-form-label">Class Name</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control w-50" id="class_name" name="class_name" placeholder="Class Name" t-att-required="true" />
+                            </div>
+                        </div>
+                        <button type="button" id="add_student_button" class="btn btn-info">Add Student</button>
+                        <p class="text-secondary my-4" id="student_count_container" style="display:none;">Student Count: <span id="student_count" /> </p>   <!-- disypaly none'u style olarak verdik, class oldumu sıkıntı oluyor cunku -->
+                        <div class="form-group row" id="students_row" />
+                        <div class="form-group row">
+                            <div class="col-sm-10">
+                                <button type="submit" class="btn btn-primary">Add Class</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </t>
+        </template>
+    </data>
+</odoo>

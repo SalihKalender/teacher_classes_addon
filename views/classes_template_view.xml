@@ -1,0 +1,40 @@
+<odoo>
+    <data>
+        <template id="classes_page">
+            <t t-call="website.layout">
+                <t t-foreach="classes" t-as="_class">
+                    <div class="p-5 text-center bg-light">
+                        <h2 class="main_title">Class:
+                            <t t-esc="_class.name"/>
+                        </h2>
+                        <h3>Students</h3>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Exams</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="_class.students" t-as="student">
+                                    <tr>
+                                        <td>
+                                            <a t-att-href="'/university_teacher/classes/students/%s' % student.id" class="d-block w-100">
+                                                <t t-esc="student.name"/>
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <a href="#" class="d-block w-100">
+                                                <t t-esc="student.exam_count"/>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

@@ -1,7 +1,7 @@
 from odoo import fields, api, models
 
 
-class CreateClassReport(models.TransientModel):  # Only Class, No Multiple
+class CreateClassReport(models.TransientModel): 
     _name = 'create.exam.report.wizard'
     _description = 'Create class Report'
 

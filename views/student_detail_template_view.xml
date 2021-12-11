@@ -1,0 +1,39 @@
+<odoo>
+    <data>
+        <template id="student_detail_page">
+            <t t-call="website.layout">
+                <div class="p-5 text-center bg-light">
+                    <div class="o-bordered">
+                        <h4 class="my-1"> Name: <t t-esc="student.name"/></h4>
+                        <h4 class="my-1"> Class: <t t-esc="student.class_room.name"/></h4>
+                    </div>
+                    <h3>Exams</h3>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">Exam Name</th>
+                                <th scope="col">Exam Date</th>
+                                <th scope="col">Point</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-foreach="exams" t-as="exam">
+                                <tr>
+                                    <td>
+                                        <t t-esc="exam['name']"/>
+                                    </td>
+                                    <td>
+                                        <t t-esc="exam['date']"/>
+                                    </td>
+                                    <td>
+                                        <t t-esc="exam['point']"/>
+                                    </td>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+                </div>
+            </t>
+        </template>
+    </data>
+</odoo>

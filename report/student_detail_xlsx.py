@@ -13,7 +13,7 @@ class PartnerXlsx(models.AbstractModel):
         sheet.set_column('D:E', 14)
         sheet.set_column('F:G', 25)
         for obj in partners:
-            sheet.write(row, col, 'Name', bold)   # 3.satir, 3.sutun'dan sonraki satir ve sutunlar, yani 4.satir 4.sutun
+            sheet.write(row, col, 'Name', bold)  
             sheet.write(row, col + 1, obj.name, bold)
             sheet.write(row + 1, col, 'Class', bold)
             sheet.write(row + 1, col + 1, obj.class_room.name, bold)

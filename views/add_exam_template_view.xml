@@ -1,0 +1,45 @@
+<odoo>
+    <data>
+        <template id="add_exam">
+            <t t-call="website.layout">
+                <div class="container p-5">
+                    <form action="/university_teacher/created/exam">
+                        <!-- 2 column grid layout with text inputs for the first and last names -->
+                        <input type='hidden' name='csrf_token' t-att-value='request.csrf_token()' />
+                        <div class="row mb-4">
+                            <div class="col">
+                                <div class="form-outline">
+                                    <input type="text" id="exam_name" name="exam_name" class="form-control"/>
+                                    <label class="form-label" for="exam_name">Exam name</label>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-outline">
+                                    <input type="date" id="exam_date" name="exam_date" class="form-control"/>
+                                    <label class="form-label" for="exam_date">Exam Date</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class='c-filter'>
+                            <button class='c-filter__toggle'>Filter</button>
+                            <ul class='c-filter__ul'>
+                                <t t-set="i" t-value="1"/>
+                                <t t-foreach="classes" t-as="_class">
+                                    <li class='c-filter__item'>
+                                        <input type='checkbox' t-att-id='i' t-att-name="'class_%s' % _class.name" class="classes_checkbox" t-att-value="_class.id"/>
+                                        <label tabindex='-1' t-att-for='i'>
+                                            <t t-esc="_class.name"/>
+                                        </label>
+                                    </li>
+                                    <t t-set="i" t-value="i+1"/>
+                                </t>
+                            </ul>
+                        </div>
+                        <div id="results_table" class="mt-4" />
+                        <button type="submit" class="btn btn-primary btn-block mb-4">Add Exam</button>
+                    </form>
+                </div>
+            </t>
+        </template>
+    </data>
+</odoo>

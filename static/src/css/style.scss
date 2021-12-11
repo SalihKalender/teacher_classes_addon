@@ -1,0 +1,6 @@
+[data-toggle="collapse"] {
+  cursor: pointer;
+  &[aria-expanded="true"] .fa-chevron-right:before {
+    content: "\f078";
+  }
+}

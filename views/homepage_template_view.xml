@@ -1,0 +1,13 @@
+<odoo>
+    <data>
+        <template id="main_page">
+            <t t-call="website.layout">
+                <div class="p-5 text-center bg-light">
+                    <h1 class="mb-3">University Teacher Module</h1>
+                    <h4 class="mb-3">Classes, Students, Reports and more...</h4>
+<!--                    <a class="btn btn-primary" href="/hospitals" role="button">Get Started</a>-->
+                </div>
+            </t>
+        </template>
+    </data>
+</odoo>

@@ -10,7 +10,7 @@ class Exam(models.Model):
 
     @api.onchange('classes')
     def get_students_on_tree(self):
-        self.results = None     # Burayi yapman lazim, yoksa ayni kodu tekrar eder
+        self.results = None     
         for rec in self:
             student_lines = []
             for line in self.classes.students:

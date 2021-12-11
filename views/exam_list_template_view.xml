@@ -1,0 +1,73 @@
+<odoo>
+    <data>
+        <template id="exam_list">
+            <t t-call="website.layout">
+                <div class="p-5 bg-light">
+                    <h1>Exams</h1>
+                    <ul class="list-group" id="list-group-accordion">
+<!--                        <t t-set="numbers" t-value="['one', 'two', 'three', 'four', 'five', 'six']"/>-->
+                        <t t-set="i" t-value="0"/>
+                        <t t-foreach="exams" t-as="exam">
+                            <li class="list-group-item">
+                                <h2 class="list-group-heading" data-toggle="collapse"
+                                    t-att-data-target="'#item-%s' % i"
+                                    data-parent="#list-group-accordion"><span><t t-esc="exam.name"/></span> <i class="fa fa-chevron-right pull-right" />
+                                </h2>
+                                <div t-att-id="'item-%s' % i" class="collapse">
+                                    <div class="d-flex w-50 justify-content-between">
+                                        <div class="d-flex w-50 justify-content-between">
+                                            <h4>
+                                                Classes:
+                                                <span>
+                                                    <t t-foreach="exam.classes" t-as="_class">
+                                                        <t t-esc="_class.name"/> /
+                                                    </t>
+                                                </span>
+                                            </h4>
+                                        </div>
+                                        <div class="d-flex w-50 justify-content-between">
+                                            <h4>
+                                                Date:
+                                                <span>
+                                                    <t t-esc="exam.date"/>
+                                                </span>
+                                            </h4>
+                                        </div>
+                                    </div>
+                                    <div class="content">
+                                        <table class="table table-borderless mt-3">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">Name</th>
+                                                    <th scope="col">Class</th>
+                                                    <th scope="col">Point</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <t t-foreach="exam.results" t-as="result">
+                                                    <tr>
+                                                        <td>
+                                                            <t t-esc="result.student_name.name" />
+                                                        </td>
+                                                        <td>
+                                                            <t t-esc="result.class_room" />
+                                                        </td>
+                                                        <td>
+                                                            <t t-esc="result.point" />
+                                                        </td>
+                                                    </tr>
+                                                </t>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <t t-set="i" t-value="i+1"/>
+                            </li>
+                        </t>
+                        <!--                        quote design = https://codepen.io/jwynveen/pen/WQrGVg-->
+                    </ul>
+                </div>
+            </t>
+        </template>
+    </data>
+</odoo>

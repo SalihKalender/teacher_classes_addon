@@ -7,7 +7,6 @@ class ExamResults(models.Model):
 
     exam_name = fields.Many2one('class.exam', ondelete='cascade')
     student_name = fields.Many2many('student.student', 'student_exam_rel', 'student_id', 'exam_id', string='Student Name')
-    # student_name = fields.Many2one('student.student', string='Student Name')
     point = fields.Integer(string='Point')
     display_name = fields.Char(string='Student Name', compute='get_student_name', store=False)
     exam_date = fields.Char(string='', compute='compute_exam_date', store=False)
